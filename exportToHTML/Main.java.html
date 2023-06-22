@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #6a8759;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Main {</span>
+  <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+    <span class="s1">graph a = </span><span class="s0">new </span><span class="s1">graph(</span><span class="s2">4</span><span class="s0">,</span><span class="s2">5</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">a.directed = </span><span class="s0">false;</span>
+    <span class="s1">a.addEdge(</span><span class="s3">'a'</span><span class="s0">,</span><span class="s3">'a'</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">a.addEdge(</span><span class="s3">'a'</span><span class="s0">,</span><span class="s3">'b'</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">a.addEdge(</span><span class="s3">'b'</span><span class="s0">,</span><span class="s3">'c'</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">a.addEdge(</span><span class="s3">'c'</span><span class="s0">,</span><span class="s3">'d'</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">a.addEdge(</span><span class="s3">'d'</span><span class="s0">,</span><span class="s3">'a'</span><span class="s1">)</span><span class="s0">;</span>
+<span class="s4">//    a.addEdge('a','b');</span>
+<span class="s4">////   a.addEdge('b','a');</span>
+<span class="s4">//    a.addEdge('b','c');</span>
+<span class="s4">//   a.addEdge('c','a');</span>
+<span class="s4">//    a.addEdge('b','d');</span>
+<span class="s4">//    a.addEdge('d','c');</span>
+<span class="s4">//    a.addEdge('d','a');</span>
+<span class="s4">//    a.addEdge('a','d');</span>
+
+<span class="s4">//    a.addEdge('e','f');</span>
+<span class="s4">//    a.addEdge('f','g');</span>
+<span class="s4">//    a.addEdge('g','a');</span>
+
+    <span class="s1">System.out.println(a)</span><span class="s0">;</span>
+
+  <span class="s1">}</span>
+  <span class="s0">public static void </span><span class="s1">readGraph(){</span>
+    <span class="s1">Scanner input = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+    <span class="s1">System.out.println(</span><span class="s3">&quot;type of the graph: </span><span class="s0">\n </span><span class="s3">d: for directed, u: for undirected:- &quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s0">char </span><span class="s1">type = input.next().charAt(</span><span class="s2">0</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">System.out.print(</span><span class="s3">&quot;how many points?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">graph g = </span><span class="s0">new </span><span class="s1">graph(input.nextInt()</span><span class="s0">, </span><span class="s1">input.nextInt())</span><span class="s0">;</span>
+    <span class="s1">System.out.println(</span><span class="s3">&quot;fill the matrix:  &quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">System.out.print(</span><span class="s3">&quot;   &quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s0">for </span><span class="s1">(vertex vertex : g.vertices) System.out.print(vertex.currentName + </span><span class="s3">&quot; &quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">System.out.println(</span><span class="s3">&quot; &quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s2">0</span><span class="s0">; </span><span class="s1">i &lt; g.n</span><span class="s0">; </span><span class="s1">i++){</span>
+      <span class="s1">System.out.print(g.vertices[i].currentName+</span><span class="s3">&quot;: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+      <span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">j = </span><span class="s2">0</span><span class="s0">; </span><span class="s1">j &lt; g.n</span><span class="s0">; </span><span class="s1">j++){</span>
+        <span class="s0">byte </span><span class="s1">aa = input.nextByte()</span><span class="s0">;</span>
+        <span class="s0">if </span><span class="s1">(aa==</span><span class="s2">0</span><span class="s1">||aa==</span><span class="s2">1</span><span class="s1">) {</span>
+          <span class="s1">g.adjacencyMatrix[i][j] = aa</span><span class="s0">;</span>
+          <span class="s0">if</span><span class="s1">(aa==</span><span class="s2">1</span><span class="s1">) {</span>
+            <span class="s1">g.addEdge(g.vertices[i].currentName</span><span class="s0">,</span><span class="s1">g.vertices[j].currentName)</span><span class="s0">;</span>
+          <span class="s1">}</span>
+        <span class="s1">}</span>
+        <span class="s0">else</span><span class="s1">{</span>
+          <span class="s1">System.out.println(</span><span class="s3">&quot;wrong input, please try again&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+      <span class="s1">}</span>
+    <span class="s1">}</span>
+    <span class="s0">switch </span><span class="s1">(type){</span>
+      <span class="s0">case </span><span class="s3">'d'</span><span class="s0">,</span><span class="s3">'D' </span><span class="s1">-&gt; g.directed = </span><span class="s0">true;</span>
+      <span class="s0">case </span><span class="s3">'u'</span><span class="s0">,</span><span class="s3">'U' </span><span class="s1">-&gt; g.directed = </span><span class="s0">false;</span>
+    <span class="s1">}</span>
+    <span class="s1">System.out.println(g)</span><span class="s0">;</span>
+  <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>

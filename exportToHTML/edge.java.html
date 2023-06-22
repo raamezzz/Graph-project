@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>edge.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+edge.java</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">edge {</span>
+  <span class="s1">vertex startPoint</span><span class="s0">;</span>
+  <span class="s1">vertex endPoint</span><span class="s0">;</span>
+  <span class="s1">String name</span><span class="s0">;</span>
+
+  <span class="s0">public static int </span><span class="s1">edgeNo = </span><span class="s2">1</span><span class="s0">;</span>
+  <span class="s0">public int </span><span class="s1">currentNo</span><span class="s0">;</span>
+  <span class="s0">public </span><span class="s1">edge(vertex a</span><span class="s0">, </span><span class="s1">vertex b){</span>
+    <span class="s1">currentNo=edgeNo</span><span class="s0">;</span>
+    <span class="s1">startPoint = a</span><span class="s0">;</span>
+    <span class="s1">endPoint = b</span><span class="s0">;</span>
+    <span class="s1">name = </span><span class="s3">&quot;e&quot; </span><span class="s1">+ </span><span class="s3">&quot;&quot; </span><span class="s1">+ currentNo</span><span class="s0">;</span>
+    <span class="s1">edgeNo++</span><span class="s0">;</span>
+  <span class="s1">}</span>
+<span class="s0">public </span><span class="s1">String toStringUndirected(){</span>
+  <span class="s0">return </span><span class="s3">&quot;(&quot; </span><span class="s1">+ startPoint.currentName +</span><span class="s3">&quot;&lt;-&gt;&quot;</span><span class="s1">+endPoint.currentName+</span><span class="s3">&quot;)&quot;</span><span class="s0">;</span>
+<span class="s1">}</span>
+  <span class="s1">@Override</span>
+  <span class="s0">public </span><span class="s1">String toString() {</span>
+    <span class="s0">return </span><span class="s3">&quot;(&quot; </span><span class="s1">+ startPoint.currentName +</span><span class="s3">&quot;-&gt;&quot;</span><span class="s1">+endPoint.currentName+</span><span class="s3">&quot;)&quot;</span><span class="s0">;</span>
+  <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
